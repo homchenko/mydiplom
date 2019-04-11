@@ -32,7 +32,8 @@ class FeedbackMail extends Mailable
         return $this->view('mails.feedback')
             ->with([
                 'name' => $this->feedback['name'],
-                'content' => $this->feedback['content'],
+                'email' => $this->feedback['email'],
+                'message' => $this->feedback['message']
             ]);
     }
 }
