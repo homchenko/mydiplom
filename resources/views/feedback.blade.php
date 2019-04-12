@@ -48,12 +48,11 @@
 
         </div>
 
-        <div class="container">
+        <div class="content">
             <div class="row">
                 <div class="col-md-12" >
 
-                    {!! Form::open() !!}
-                    {{csrf_field()}}
+                    {!! Form::open(array('action' => 'MailController@sendmail', 'method' => 'POST', 'id' => 'fom')) !!}
                     <div class="form-group">
                         {{ Form::label('name', 'Введите ваше имя') }}
                         {{ Form::text('name', null, ['class' =>'form-control', 'id' => 'name']) }}
@@ -73,6 +72,7 @@
 
                     {!! Form::close() !!}
                     <div id="msg"></div>
+
                 </div>
             </div>
         </div>
@@ -83,7 +83,8 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                $('#button').click(function () {
+                $('#button').click(function (e) {
+                    e.preventDefault();
                     var name = $('#name').val();
                     var email = $('#email').val();
                     var message = $('#message').val();
@@ -91,13 +92,15 @@
                         type: "POST",
                         url: 'sendmail',
                         data: {
-                            name: name,
-                            email: email,
-                            message: message
+                            name: 'name',
+                            email: 'email',
+                            message: 'message'
                         },
                         success: function(data){
                             $('#msg').text(data.msg);
+                            $('#form').hide();
                         }
+
                     })
                 });
             });
