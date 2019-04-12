@@ -91,15 +91,15 @@
               @endforeach
 
           </section>
-          <div class="pagination">
-            <ul class="pagination-list">
-              <li class="pagination-list__page pagination-list__page--current"><a>1</a></li>
-              <li class="pagination-list__page"><a href="#">2</a></li>
-              <li class="pagination-list__page"><a href="#">3</a></li>
-              <li class="pagination-list__page"><a href="#">4</a></li>
-              <li class="pagination-list__page"><a href="#">5</a></li>
-            </ul>
-          </div>
+          {{--<div class="pagination">--}}
+            {{--<ul class="pagination-list">--}}
+              {{--<li class="pagination-list__page pagination-list__page--current"><a>1</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">2</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">3</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">4</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">5</a></li>--}}
+            {{--</ul>--}}
+          {{--</div>--}}
         </main>
       </div>
       @include('front.partials.footer')

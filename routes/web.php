@@ -12,10 +12,18 @@
 */
 Route::get('/', 'ProductController@main')->name('main.page');
 Route::get('/catalog', 'CatalogController@catalog')->name('catalog.page');
+
 Route::get('/feedback', 'MailController@feedback')->name('feedback');
 Route::post('/sendmail', 'MailController@sendmail')->name('sendmail');
 
 Route::post('/filter', 'FilterController@search')->name('filter');
+
+Route::get('/checkout', 'CheckoutController@checkout')->name('checkout');
+Route::post('/checkout', 'CheckoutController@checkoutForm')->name('checkout.form');
+Route::get('/checkout', 'CheckoutController@addToCart')->name('add.to.cart');
+
+//Route::get('/success', 'CheckoutController@success')->name('success.redirect');
+
 
 Auth::routes();
 Route::group(['middleware'=>'auth', 'prefix'=>'home'], function (){

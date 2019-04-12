@@ -32,7 +32,7 @@
                 </div>
             </header>
         <div class="form-group">
-            {{--<h1>{{$feedback->name}}!</h1>--}}
+            <h1>{{$name}}!</h1>
             <h1>Наши менеджеры скоро с вами свяжутся!</h1>
         </div>
 
