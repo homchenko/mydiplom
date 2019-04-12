@@ -13,16 +13,16 @@
             <ul class="site-nav">
               <li class="site-nav__item site-nav__item--current">
                 <a href="{{route('catalog.page')}}">Каталог</a>
-                <div class="site-nav__submenu-container">
-                  <ul class="site-nav__submenu">
-                    <!--<li class="site-nav__submenu-item site-nav__submenu-item--special"><a href="#">Новинки</a></li>-->
-                    
-                    @foreach($categories as $categorie)
-                      <li class="site-nav__submenu-item"><a href="#">{{$categorie->title}}</a></li>
-                    @endforeach
+                {{--<div class="site-nav__submenu-container">--}}
+                  {{--<ul class="site-nav__submenu">--}}
+                    {{--<!--<li class="site-nav__submenu-item site-nav__submenu-item--special"><a href="#">Новинки</a></li>-->--}}
+                    {{----}}
+                    {{--@foreach($categories as $categorie)--}}
+                      {{--<li class="site-nav__submenu-item"><a href="#">{{$categorie->title}}</a></li>--}}
+                    {{--@endforeach--}}
 
-                  </ul>
-                </div>
+                  {{--</ul>--}}
+                {{--</div>--}}
               </li>
               <li class="site-nav__item"><a href="#">Доставка и оплата</a></li>
               <li class="site-nav__item"><a href="#">О Компании</a></li>
@@ -168,15 +168,15 @@
               @endforeach
 
           </section>
-          <div class="pagination">
-            <ul class="pagination-list">
-              <li class="pagination-list__page pagination-list__page--current"><a>1</a></li>
-              <li class="pagination-list__page"><a href="#">2</a></li>
-              <li class="pagination-list__page"><a href="#">3</a></li>
-              <li class="pagination-list__page"><a href="#">4</a></li>
-              <li class="pagination-list__page"><a href="#">5</a></li>
-            </ul>
-          </div>
+          {{--<div class="pagination">--}}
+            {{--<ul class="pagination-list">--}}
+              {{--<li class="pagination-list__page pagination-list__page--current"><a>1</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">2</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">3</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">4</a></li>--}}
+              {{--<li class="pagination-list__page"><a href="#">5</a></li>--}}
+            {{--</ul>--}}
+          {{--</div>--}}
         </main>
       </div>
       @include('front.partials.footer')

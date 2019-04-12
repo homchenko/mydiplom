@@ -4,15 +4,14 @@
 return array(
     "driver" => "smtp",
     "host" => "smtp.mailtrap.io",
-    "port" => 587,
+    "port" => 2525,
     "from" => array(
         "address" => "from@example.com",
         "name" => "Example"
     ),
-    "username" => "c31692c03088f4",
-    "password" => "21555f8567d31a",
-    "sendmail" => "/usr/sbin/sendmail -bs",
-    "pretend" => false
+    "username" => "9aba532b57366f",
+    "password" => "ba58f3054b2429",
+    "sendmail" => "/usr/sbin/sendmail -bs"
 );
 
 //

@@ -21,8 +21,10 @@ class MailController extends Controller
         $feedback['email'] = $request->input('email');
         $feedback['message'] = $request->input('message');
         Mail::to($feedback['email'])->send(new   FeedbackMail   ($feedback));
-        return response()->json([
-            'msg' => 'message'
-        ]);
+//        return response()->json([
+//            'msg' => 'message'
+//        ]);
+        return view('mails.feedback');
+//        return view('mails.feedback', compact('feedback'));
     }
 }

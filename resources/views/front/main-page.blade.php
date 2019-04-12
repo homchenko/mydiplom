@@ -16,16 +16,16 @@
             <ul class="site-nav">
               <li class="site-nav__item">
                 <a href="{{route('catalog.page')}}">Каталог</a>
-                <div class="site-nav__submenu-container">
-                  <ul class="site-nav__submenu">
-                    <!--<li class="site-nav__submenu-item site-nav__submenu-item--special"><a href="#">Новинки</a></li>-->
+                {{--<div class="site-nav__submenu-container">--}}
+                  {{--<ul class="site-nav__submenu">--}}
+                    {{--<!--<li class="site-nav__submenu-item site-nav__submenu-item--special"><a href="#">Новинки</a></li>-->--}}
 
-                    @foreach($categories as $categorie)
-                      <li class="site-nav__submenu-item"><a href="#">{{$categorie->title}}</a></li>
-                    @endforeach
+                    {{--@foreach($categories as $categorie)--}}
+                      {{--<li class="site-nav__submenu-item"><a href="#">{{$categorie->title}}</a></li>--}}
+                    {{--@endforeach--}}
 
-                  </ul>
-                </div>
+                  {{--</ul>--}}
+                {{--</div>--}}
               </li>
               <li class="site-nav__item"><a href="#">Доставка и оплата</a></li>
               <li class="site-nav__item"><a href="#">О Компании</a></li>

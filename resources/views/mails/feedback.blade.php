@@ -15,12 +15,12 @@
                         <li class="user-nav__item user-search">
                         </li>
 
-                        <li class="user-nav__item user-basket">
-                            <a href="#">
-                                <svg class="user-basket__icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"><g fill="#fff"><path d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"/><circle cx="6.984" cy="18" r="2"/><circle cx="15.984" cy="18" r="2"/></g></svg>
-                                Пусто
-                            </a>
-                        </li>
+                        {{--<li class="user-nav__item user-basket">--}}
+                            {{--<a href="#">--}}
+                                {{--<svg class="user-basket__icon" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"><g fill="#fff"><path d="M5.657 2.031L5.422 0H0v2h3.64l1.5 13h13.988l1.699-12.969H5.657zM17.372 13H6.922L5.888 4.031h12.66L17.372 13z"/><circle cx="6.984" cy="18" r="2"/><circle cx="15.984" cy="18" r="2"/></g></svg>--}}
+                                {{--Пусто--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
 
                     </ul>
                 </nav>
@@ -31,8 +31,9 @@
                     </p>
                 </div>
             </header>
-        <div class="filter">
-            <h3>{{$name}}, наши менеджеры скоро с вами свяжутся</h3>
+        <div class="form-group">
+            {{--<h1>{{$feedback->name}}!</h1>--}}
+            <h1>Наши менеджеры скоро с вами свяжутся!</h1>
         </div>
 
         </div>
