@@ -11,4 +11,6 @@ class Feedback extends Model
         'email',
         'message'
     ];
+
+    public $timestamps = false;
 }

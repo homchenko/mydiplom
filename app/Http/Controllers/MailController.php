@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Feedback;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\FeedbackMail;
 
 class MailController extends Controller
 {
@@ -19,7 +20,7 @@ class MailController extends Controller
         $feedback['name'] = $request->input('name');
         $feedback['email'] = $request->input('email');
         $feedback['message'] = $request->input('message');
-
+        Mail::to($feedback['email'])->send(new   FeedbackMail   ($feedback));
         return response()->json([
             'msg' => 'message'
         ]);
