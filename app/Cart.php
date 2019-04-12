@@ -9,7 +9,6 @@ class Cart extends Model
     public $items = null;
     public $totalPrice = 0;
     public $totalQty = 0;
-//    public $shipmentPrice;
 
     public function __construct($oldCart)
     {
@@ -34,15 +33,10 @@ class Cart extends Model
         }
 
         $storedItems['qty']++;
-
         $storedItems['price'] = $item->price * $storedItems['qty'];
-
         $this->items[$id] = $storedItems;
-
         $this->totalQty++;
-
         $this->totalPrice += $item->price;
-
     }
 
     public function reduceByOne($id) {

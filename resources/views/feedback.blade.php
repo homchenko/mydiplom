@@ -68,7 +68,7 @@
                         {{ Form::text('message', null, ['class' =>'form-control', 'id' => 'message']) }}
                     </div>
 
-                    {{ Form::submit('Отправить', ['class' => 'btn btn-primary', 'id' => 'submit']) }}
+                    {{ Form::submit('Отправить', ['class' => 'button offers__button', 'id' => 'submit']) }}
 
                     {!! Form::close() !!}
                     <div id="msg"></div>

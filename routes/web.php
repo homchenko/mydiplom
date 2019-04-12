@@ -20,9 +20,9 @@ Route::post('/filter', 'FilterController@search')->name('filter');
 
 Route::get('/checkout', 'CheckoutController@checkout')->name('checkout');
 Route::post('/checkout', 'CheckoutController@checkoutForm')->name('checkout.form');
-Route::get('/checkout', 'CheckoutController@addToCart')->name('add.to.cart');
+Route::get('/get-add-to-cart/{id}', 'ProductController@getAddToCart')->name('add.to.cart');
 
-//Route::get('/success', 'CheckoutController@success')->name('success.redirect');
+Route::get('/success', 'CheckoutController@success')->name('success.redirect');
 
 
 Auth::routes();

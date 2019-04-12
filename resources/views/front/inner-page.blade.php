@@ -162,11 +162,11 @@
                       <span class="value">{{$product->price}}</span>
                       <span class="weight"> BY/кг</span>
                     </p>
-                    <p class="catalog-item-buttons">
-                      <a href="{{ route('add.to.cart', ['id' => $product->id]) }}" role="button" style="font-size: 16px;">В корзину</a>
-                    </p>
                   </div>
                   <h1 class="products-item__title"><a href="#">{{$product->title}}</a></h1>
+                  <p class="catalog-item-buttons">
+                    <a href="{{ route('add.to.cart', ['id' => $product->id]) }}" class="button offers__button" role="button" style="font-size: 16px;">В корзину</a>
+                  </p>
                 </article>
               @endforeach
 

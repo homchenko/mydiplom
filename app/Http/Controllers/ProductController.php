@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Category;
 use App\Product;
+use App\Cart;
 
 class ProductController extends Controller
 {
@@ -102,4 +104,13 @@ class ProductController extends Controller
         // редирект на список продуктов
         return redirect(route('products.index'));
     }
+    public function getAddToCart(Request $request, $id) {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+        $request->session()->put('cart', $cart);
+        return redirect()->route('main.page');
+    }
+
 }
