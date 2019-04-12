@@ -110,7 +110,52 @@ class ProductController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
         $request->session()->put('cart', $cart);
+        return redirect()->route('catalog.page');
+    }
+    public function showCart() {
+        $number=1;
+        if(!Session::has('cart')) {
+            return view('front.shopping-cart', [
+                'products' => null
+            ]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        return view('front.shopping-cart', [
+            'products' => $cart->items,
+            'totalQty' => $cart->totalQty,
+            'totalPrice' => $cart->totalPrice,
+            'number' => $number
+        ]);
+        $number++;
+    }
+    public function reduceByOne($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+            return redirect()->route('main.page');
+        }
+        return redirect()->route('show.cart');
+    }
+    public function deleteProduct($id) {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->delete($id);
+        if(count($cart->items) > 0) {
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+            return redirect()->route('main.page');
+        }
+        return redirect()->route('show.cart');
+    }
+    public function destroyProduct() {
+        Session::forget('cart');
         return redirect()->route('main.page');
     }
-
 }

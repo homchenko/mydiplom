@@ -61,7 +61,7 @@
                     </tr>
                     @foreach($products as $product)
                         <tr>
-                            <td>1</td>
+                            <td>{{$number}}</td>
                             <td>{{ $product['item']['title'] }}</td>
                             <td>{{ $product['qty'] }}</td>
                             <td>{{ $product['item']['price'] }}</td>
@@ -79,13 +79,11 @@
                 <hr>
                 <h2>Общее количество {{ $totalQty }}</h2>
                 <h2>Общую цену {{ $totalPrice }}</h2>
-
+                <a href="{{ route('checkout') }}" class="header-upper-order">Оформить заказ</a>
                 <a href="{{ route('destroy') }}">Очистить корзину</a>
 
             @else
-
-                <p>Продуктов нет в корзине</p>
-
+                <p>Корзина пуста</p>
             @endif
         </div>
 

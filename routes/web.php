@@ -18,11 +18,14 @@ Route::post('/sendmail', 'MailController@sendmail')->name('sendmail');
 
 Route::post('/filter', 'FilterController@search')->name('filter');
 
-Route::get('/checkout', 'CheckoutController@checkout')->name('checkout');
-Route::post('/checkout', 'CheckoutController@checkoutForm')->name('checkout.form');
+Route::get('/show-cart', 'ProductController@showCart')->name('show.cart');
+Route::get('/forget', 'ProductController@destroyProduct')->name('destroy');
+Route::get('/reduce-by-one/{id}', 'ProductController@reduceByOne')->name('reduce.by.one');
+Route::get('/delete/{id}', 'ProductController@deleteProduct')->name('delete.product');
+Route::get('/checkout', 'CartController@checkout')->name('checkout');
+Route::post('/checkout', 'CartController@checkoutForm')->name('checkout.form');
 Route::get('/get-add-to-cart/{id}', 'ProductController@getAddToCart')->name('add.to.cart');
-
-Route::get('/success', 'CheckoutController@success')->name('success.redirect');
+Route::get('/success', 'CartController@success')->name('success.redirect');
 
 
 Auth::routes();

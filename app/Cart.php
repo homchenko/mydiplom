@@ -49,7 +49,7 @@ class Cart extends Model
         }
     }
 
-    public function delete($id) {
+    public function deleteProduct($id) {
         $this->totalQty -= $this->items[$id]['qty'];
         $this->totalPrice -= $this->items[$id]['item']['price'] * $this->items[$id]['qty'];
         unset($this->items[$id]);

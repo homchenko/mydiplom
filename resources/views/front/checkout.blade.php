@@ -58,6 +58,7 @@
                         <br>
                         <input type="text" value="E-mail" name="email">
                         <input type="submit" value="Заказть">
+
                     </form>
                 </div>
             @else
