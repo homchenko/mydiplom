@@ -19,7 +19,7 @@ class CartController extends Controller
             'cart' => serialize($cart),
             'name' => $request->input('name'),
             'phone' => $request->input('phone'),
-            'status' => 'default',
+            //'status' => 'default',
             'client_email' => $request->input('client_email'),
         ]);
 
@@ -28,19 +28,19 @@ class CartController extends Controller
             'phone' => $request->input('phone'),
             'client_email' => $request->input('client_email'),
             'amount' => $cart->totalPrice * 100,
-            'shop_id' => 4617,
-            'currency' => 'USD',
-            'description' => 'description',
-            'order_id' => 1,
-            'debug' => 1,
-            'signature' => 'c1ee070b34d13574',
-            'language' => 'ru'
+//            'shop_id' => 4617,
+//            'currency' => 'USD',
+//            'description' => 'description',
+//            'order_id' => 1,
+//            'debug' => 1,
+//            'signature' => 'c1ee070b34d13574',
+//            'language' => 'ru'
         ];
 
         // Send a POST request to: http://www.foo.com/bar
-        $response = Curl::to('https://megakassa.ru/merchant/')
-            ->withData($data)
-            ->post();
+//        $response = Curl::to('https://megakassa.ru/merchant/')
+//            ->withData($data)
+//            ->post();
         Session::forget('cart');
         return redirect()->route('main.page');
     }
