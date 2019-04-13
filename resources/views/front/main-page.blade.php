@@ -125,7 +125,7 @@
                     </p>
                   </div>
                     <p class="products-item__title">
-                      <a href="#">{{ $product->title }}</a>
+                      <a href="{{route('catalog.page')}}">{{ $product->title }}</a>
                     </p>
                 </li>
               @endforeach
@@ -185,12 +185,12 @@
         </main>
       </div>
       <div class="map">
-        <!-- <iframe src="https://yandex.ru/map-widget/v1/-/CBUrrQgKKB" width="1200" height="430"></iframe> -->
+        {{--<iframe src="https://yandex.ru/maps/?um=constructor%3Ab2b6347c62a7d29f65b4ee141cb04685285038ba431877283e3950d58f76f2d4&source=constructorLink" width="1200" height="430"></iframe>--}}
         <div class="content-wrapper">
           <div class="contacts">
             <p class="contacts__address">
               <span>Адрес главного офиса и офлайн магазина:</span>
-              <b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b>
+              <b>Гомель, Пушкина, 2</b>
             </p>
             <p class="contacts__tel">
               <span>Для заказов по телефону:</span>
@@ -199,7 +199,7 @@
             <a href="{{route('feedback')}}" class="button contacts__feedback-btn">Форма обратной связи</a>
           </div>
         </div>
-        
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab2b6347c62a7d29f65b4ee141cb04685285038ba431877283e3950d58f76f2d4&amp;source=constructor" width="1200" height="430" frameborder="0"></iframe>
       </div>
       @include('front.partials.footer')
     </div>
