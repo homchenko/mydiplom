@@ -27,10 +27,12 @@
             </ul>
           </div>
           <div class="footer-menu">
-            <a href="#" class="footer-menu__item">Для поставщиков</a>
-            <a href="#" class="footer-menu__item">Наши документы</a>
-            <a href="#" class="footer-menu__item">О производстве</a>
-            <a href="#" class="footer-menu__item">Экологические стандарты</a>
+            <span>
+              <a href="#" class="footer-menu__item">Для поставщиков</a>
+              <a href="#" class="footer-menu__item">Наши документы</a>
+              <a href="#" class="footer-menu__item">О производстве</a>
+              <a href="#" class="footer-menu__item">Экологические стандарты</a>
+            </span>
           </div>
           <div class="footer-copyright">
             <a href="https://htmlacademy.ru/intensive/htmlcss" class="footer-copyright__logo">

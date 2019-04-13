@@ -44,67 +44,61 @@
                     </p>
                 </div>
             </header>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-12" >
+                        {!! Form::open(array('action' => 'MailController@sendmail', 'method' => 'POST', 'id' => 'fom')) !!}
+                        <div class="form-group">
+                            {{ Form::label('name', 'Введите ваше имя') }}
+                            {{ Form::text('name', null, ['class' =>'form-control', 'id' => 'name']) }}
+                        </div>
 
+                        <div class="form-group">
+                            {{ Form::label('email', 'Введите ваш email') }}
+                            {{ Form::text('email', null, ['class' =>'form-control', 'id' => 'email']) }}
+                        </div>
 
-        </div>
+                        <div class="form-group">
+                            {{ Form::label('message', 'Ваше сообщение') }}
+                            {{ Form::text('message', null, ['class' =>'form-control', 'id' => 'message']) }}
+                        </div>
 
-        <div class="content">
-            <div class="row">
-                <div class="col-md-12" >
+                        {{ Form::submit('Отправить', ['class' => 'button offers__button', 'id' => 'submit', 'style' => 'margin-left:30px']) }}
 
-                    {!! Form::open(array('action' => 'MailController@sendmail', 'method' => 'POST', 'id' => 'fom')) !!}
-                    <div class="form-group">
-                        {{ Form::label('name', 'Введите ваше имя') }}
-                        {{ Form::text('name', null, ['class' =>'form-control', 'id' => 'name']) }}
+                        {!! Form::close() !!}
+                        <div id="msg"></div>
                     </div>
-
-                    <div class="form-group">
-                        {{ Form::label('email', 'Введите ваш email') }}
-                        {{ Form::text('email', null, ['class' =>'form-control', 'id' => 'email']) }}
-                    </div>
-
-                    <div class="form-group">
-                        {{ Form::label('message', 'Ваше сообщение') }}
-                        {{ Form::text('message', null, ['class' =>'form-control', 'id' => 'message']) }}
-                    </div>
-
-                    {{ Form::submit('Отправить', ['class' => 'button offers__button', 'id' => 'submit']) }}
-
-                    {!! Form::close() !!}
-                    <div id="msg"></div>
-
                 </div>
             </div>
-        </div>
-        <script>
-            $(document).ready(function(){
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $('#button').click(function (e) {
-                    e.preventDefault();
-                    var name = $('#name').val();
-                    var email = $('#email').val();
-                    var message = $('#message').val();
-                    $.ajax({
-                        type: "POST",
-                        url: 'sendmail',
-                        data: {
-                            name: 'name',
-                            email: 'email',
-                            message: 'message'
-                        },
-                        success: function(data){
-                            $('#msg').text(data.msg);
-                            $('#form').hide();
+            <script>
+                $(document).ready(function(){
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
-
-                    })
+                    });
+                    $('#button').click(function (e) {
+                        e.preventDefault();
+                        var name = $('#name').val();
+                        var email = $('#email').val();
+                        var message = $('#message').val();
+                        $.ajax({
+                            type: "POST",
+                            url: 'sendmail',
+                            data: {
+                                name: 'name',
+                                email: 'email',
+                                message: 'message'
+                            },
+                            success: function(data){
+                                $('#msg').text(data.msg);
+                                $('#form').hide();
+                            }
+                        })
+                    });
                 });
-            });
-        </script>
+            </script>
+        </div>
         @include('front.partials.footer')
     </div>
 

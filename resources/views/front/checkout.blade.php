@@ -43,27 +43,26 @@
                 </ul>
                 </section>
             </main>
-        </div>
-
-        <div class="container" style="padding-bottom: 60px;">
-        @if(Session::has('cart'))
-            <!-- https://megakassa.ru -->
-                <h2>Вы заказали на сумму: {{ $cart->totalPrice }}</h2>
-                <div class="feedback-block">
-                    <form action="{{ route('checkout.form') }}" method="POST">
-                        {{ csrf_field() }}
-                        <input type="text" value="Имя" name="name">
-                        <br>
-                        <input type="text" value="Телефон" name="phone">
-                        <br>
-                        <input type="text" value="E-mail" name="email">
-                        <input type="submit" value="Заказть">
-
-                    </form>
-                </div>
-            @else
-                <p>Продуктов нет в корзине</p>
-            @endif
+            <div class="container" style="padding: 23px;">
+            @if(Session::has('cart'))
+                <!-- https://megakassa.ru -->
+                    <h2>Вы заказали на сумму: {{ $cart->totalPrice }}</h2>
+                    <div class="feedback-block">
+                        <form action="{{ route('checkout.form') }}" method="POST">
+                            {{ csrf_field() }}
+                            <input type="text" value="Имя" name="name">
+                            <br>
+                            <input type="text" value="Телефон" name="phone">
+                            <br>
+                            <input type="text" value="E-mail" name="client_email">
+                            <br><br><br>
+                            <input type="submit" class="button contacts__feedback-btn" value="Заказть">
+                        </form>
+                    </div>
+                @else
+                    <p>Продуктов нет в корзине</p>
+                @endif
+            </div>
         </div>
 
         @include('front.partials.footer')

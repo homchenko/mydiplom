@@ -44,47 +44,45 @@
                 </ul>
                 </section>
             </main>
-        </div>
-        <br>
-        <div class="container" style="padding-bottom: 60px;">
-            @if(Session::has('cart'))
-                <table>
-                    <tr>
-                        {{--<td>№</td>--}}
-                        <td> Название </td>
-                        <td> Количество </td>
-                        <td> Цена за 1кг </td>
-                        <td> Общая цена </td>
-                        <td> Удалить </td>
-                        {{--<td> Очистить </td>--}}
-                    </tr>
-                    @foreach($products as $product)
-                        <tr>
-                            {{--<td>{{$number}}</td>--}}
-                            <td>{{ $product['item']['title'] }}</td>
-                            <td>{{ $product['qty'] }}</td>
-                            <td>{{ $product['item']['price'] }}</td>
-                            <td>{{ $product['price'] }}</td>
-                            <td>
-                                <a href="{{ route('reduce.by.one', $product['item']['id']) }}">Удалить</a>
-                            </td>
-                            {{--<td>--}}
-                                {{--<a href="{{ route('delete.product', $product['item']['id']) }}">Очистить</a>--}}
-                            {{--</td>--}}
+            <div class="container" style="padding: 23px;">
+                @if(Session::has('cart'))
+                    <table class="my-table">
+                        <tr class="my-table-tr">
+                            {{--<td>№</td>--}}
+                            <th> Название </th>
+                            <th> Количество </th>
+                            <th> Цена за 1кг </th>
+                            <th> Общая цена </th>
+                            <th> Удалить </th>
+                            {{--<td> Очистить </td>--}}
                         </tr>
-                    @endforeach
-                </table>
-                <hr>
-                <h2>Общее количество {{ $totalQty }}</h2>
-                <h2>Общая цена {{ $totalPrice }}</h2>
-                <a href="{{ route('checkout') }}" class="header-upper-order">Оформить заказ</a>
-                <a href="{{ route('destroy') }}">Очистить корзину</a>
+                        @foreach($products as $product)
+                            <tr class="my-table-tr">
+                                {{--<td>{{$number}}</td>--}}
+                                <td>{{ $product['item']['title'] }}</td>
+                                <td>{{ $product['qty'] }}</td>
+                                <td>{{ $product['item']['price'] }}</td>
+                                <td>{{ $product['price'] }}</td>
+                                <td>
+                                    <a href="{{ route('reduce.by.one', $product['item']['id']) }}">Удалить</a>
+                                </td>
+                                {{--<td>--}}
+                                {{--<a href="{{ route('delete.product', $product['item']['id']) }}">Очистить</a>--}}
+                                {{--</td>--}}
+                            </tr>
+                        @endforeach
+                    </table>
+                    <hr>
+                    <h2>Общее количество {{ $totalQty }}</h2>
+                    <h2>Общая цена {{ $totalPrice }}</h2>
+                    <a href="{{ route('checkout') }}" class="button contacts__feedback-btn">Оформить заказ</a>
+                    <a href="{{ route('destroy') }}" class="button contacts__feedback-btn">Очистить корзину</a>
 
-            @else
-                <p>Корзина пуста</p>
-            @endif
+                @else
+                    <h2 style="padding-left: 30px">Корзина пуста</h2>
+                @endif
+            </div>
         </div>
-
         @include('front.partials.footer')
     </div>
 
